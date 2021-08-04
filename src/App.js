@@ -58,10 +58,10 @@ const App = () => {
 
 
   useEffect(() => {
-    //console.log('rendering')
+  
   }, [reRender])
 
-  // console.log('Executed')
+
 
 
   function handleClick() {
