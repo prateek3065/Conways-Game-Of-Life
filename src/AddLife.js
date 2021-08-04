@@ -39,4 +39,4 @@ export default function AddLife({grid,setGrid}) {
     console.log(`up=${up} down=${down} left=${left} right=${right}`)
  
 }
-//changes
+
