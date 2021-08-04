@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default function AddLife({grid,setGrid}) {
     let up=1,down=grid.length-2,left=1,right=grid[0].length-2
     let flagU=true, flagD=true, flagL=true, flagR=true
@@ -40,3 +39,4 @@ export default function AddLife({grid,setGrid}) {
     console.log(`up=${up} down=${down} left=${left} right=${right}`)
  
 }
+//changes

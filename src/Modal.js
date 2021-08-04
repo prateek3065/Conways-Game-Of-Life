@@ -53,3 +53,4 @@ export default function Modal({open,setIsOpen,children}) {
             <p>Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
             <p>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
 */
+//changes
