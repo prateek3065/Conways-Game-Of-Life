@@ -4,7 +4,6 @@ import Modal from "./Modal";
 import AddLife from "./AddLife";
 import { v4 as uuid } from "uuid";
 import Patterns from "./Patterns";
-import PatternSelections from "./PatternSelections";
 import ModalForPattern from "./ModalForPattern";
 const numRows = 70;
 const numCols = 70;
@@ -17,7 +16,6 @@ var start_info = [
 ];
 
 const App = () => {
-  var dummy = "pass";
   //console.log(iteration)
   const [buttonText, setButtonText] = useState(() => "Start");
   const [reRender, setreRender] = useState(() => {
