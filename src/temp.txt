@@ -3,11 +3,9 @@ import Board from "./Board";
 import Modal from "./Modal";
 import AddLife from "./AddLife";
 import { v4 as uuid } from "uuid";
-import Patterns from "./Patterns";
-import PatternSelections from "./PatternSelections";
-import ModalForPattern from "./ModalForPattern";
-const numRows = 70;
-const numCols = 70;
+
+const numRows = 50;
+const numCols = 50;
 var start_info = [
   "The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur",
   "1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.",
@@ -17,7 +15,6 @@ var start_info = [
 ];
 
 const App = () => {
-  var dummy = "pass";
   //console.log(iteration)
   const [buttonText, setButtonText] = useState(() => "Start");
   const [reRender, setreRender] = useState(() => {
@@ -39,10 +36,6 @@ const App = () => {
 
   const [modalInfo, setModalInfo] = useState(() => {
     return start_info;
-  });
-
-  const [delayTime, setDelayTime] = useState(() => {
-    return 100;
   });
 
   function changeState(i, j) {
@@ -101,18 +94,7 @@ const App = () => {
     setModalInfo(start_info);
     setIsOpen(true);
   }
-  const [isModalForPatterSelectionOpen, setOpenModalForPatternSelection] =
-    useState(() => false);
 
-  const [patternSelectedFromModal, setPatternSelectedFromModal] = useState(
-    () => ""
-  );
-  function selectPattern() {
-    setOpenModalForPatternSelection(true);
-    //debugger;
-
-    //debugger;
-  }
   //console.log('Re-rendering')
   return (
     <>
@@ -130,21 +112,7 @@ const App = () => {
           <button className="buttons" onClick={addLife}>
             Add Lifes
           </button>
-          <button
-            className="buttons"
-            onClick={() => setDelayTime((prev) => prev + 100)}
-          >
-            Slow
-          </button>
-          <button
-            className="buttons"
-            onClick={() => setDelayTime((prev) => prev - 100)}
-          >
-            Fast
-          </button>
-          <button className="buttons" onClick={() => selectPattern()}>
-            Select Patterns
-          </button>
+
           <button
             className="buttons"
             id="button-info-request"
@@ -159,7 +127,7 @@ const App = () => {
         <div
           className="board"
           style={{
-            gridTemplateColumns: `repeat(${numCols},10px)`,
+            gridTemplateColumns: `repeat(${numCols},20px)`,
           }}
         >
           {grid.map((rows, i) =>
@@ -170,8 +138,8 @@ const App = () => {
                 }}
                 key={`${i}-${j}`}
                 style={{
-                  width: "10px",
-                  height: "10px",
+                  width: 20,
+                  height: 20,
                   backgroundColor:
                     grid[i][j] === 1
                       ? "green"
@@ -189,23 +157,12 @@ const App = () => {
             grid={grid}
             setGrid={setGrid}
             buttonText={buttonText}
-            delayTime={delayTime}
           />
           <Modal open={isOpen} setIsOpen={setIsOpen}>
             {modalInfo.map((element) => {
               return <div key={uuid()}>{element}</div>;
             })}
           </Modal>
-          <ModalForPattern
-            isModalForPatterSelectionOpen={isModalForPatterSelectionOpen}
-            setOpenModalForPatternSelection={setOpenModalForPatternSelection}
-            patternSelectedFromModal={patternSelectedFromModal}
-            setPatternSelectedFromModal={setPatternSelectedFromModal}
-            Patterns={Patterns}
-            setreRender={setreRender}
-            grid={grid}
-            setGrid={setGrid}
-          />
         </div>
       </div>
     </>
@@ -213,4 +170,3 @@ const App = () => {
 };
 
 export default App;
-//Patterns({ grid, setGrid, setreRender })

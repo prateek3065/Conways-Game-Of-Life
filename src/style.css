@@ -1,4 +1,5 @@
 .MODAL_STYLES {
+  border-radius: 30px;
   position: fixed;
   top: 40%;
   left: 50%;
@@ -16,7 +17,7 @@ body {
   margin: 10px;
 }
 .container {
-  background-color: #ececec;
+  background-image: linear-gradient(to top, rgb(83, 83, 83), rgb(0, 0, 0));
 }
 
 .board {
@@ -66,7 +67,7 @@ input[type="checkbox"]:checked:after {
   color: green;
 }
 
-#start-button-bar {
+#checkbox-bar {
   padding: 5px;
   padding-top: 0px;
 }
@@ -80,4 +81,9 @@ input[type="checkbox"]:checked:after {
 }
 .buttons:hover {
   background-color: darkgray;
+}
+
+#close {
+  background-color: rgb(235, 97, 97);
+  border-radius: 50%;
 }
