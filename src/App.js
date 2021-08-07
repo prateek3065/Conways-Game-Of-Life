@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import Board from "./Board";
 import Modal from "./Modal";
-import AddLife from "./AddLife";
 import { v4 as uuid } from "uuid";
 import Patterns from "./Patterns";
 import ModalForPattern from "./ModalForPattern";
@@ -84,17 +83,6 @@ const App = () => {
     setreRender((prev) => prev + 1);
   }
 
-  function addLife() {
-    if (buttonText === "Stop") {
-      setIsOpen(true);
-      setModalInfo([
-        "You must first stop the running game before adding random lifes",
-      ]);
-      return;
-    }
-    AddLife({ grid, setGrid });
-  }
-
   function infoRequest() {
     setModalInfo(start_info);
     setIsOpen(true);
@@ -129,9 +117,7 @@ const App = () => {
           >
             Reset Board
           </button>
-          <button className="buttons" onClick={addLife}>
-            Add Lifes
-          </button>
+
           <button
             className="buttons"
             onClick={() => setDelayTime((prev) => prev + 100)}
