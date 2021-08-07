@@ -221,6 +221,7 @@ export default function Patterns({
 function setPattern({ grid, setGrid, val2, setreRender }) {
   var newGrid = grid;
   for (const [key, val] of Object.entries(val2)) {
+    console.log(key);
     newGrid[val[0] + grid.length / 2][val[1] + grid[0].length / 2] = 1;
     //console.log(val);
   }
