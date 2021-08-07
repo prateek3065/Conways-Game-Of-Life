@@ -87,3 +87,49 @@ input[type="checkbox"]:checked:after {
   background-color: rgb(235, 97, 97);
   border-radius: 50%;
 }
+
+.footer {
+  color: #ececec;
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  padding: 0.1em 1em;
+  z-index: 9999;
+}
+
+.footer-tag {
+  font-size: 8px;
+  margin-left: 20px;
+}
+
+.links {
+  color: white;
+
+  font-size: 15px;
+}
+.linkedin-icon {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 200px;
+  font-size: 50px;
+}
+.linkedin-icon:hover {
+  background-color: #0072b1; /* Green */
+  color: white;
+  border-radius: 20%;
+}
+
+.github-icon {
+  color: white;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 200px;
+  font-size: 50px;
+}

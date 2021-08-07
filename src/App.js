@@ -114,6 +114,10 @@ const App = () => {
     //debugger;
   }
   //console.log('Re-rendering')
+  function goToLinkedin() {
+    console.log("clicked");
+    window.open("https://www.linkedin.com/in/prateek-sharma-891721196/");
+  }
   return (
     <>
       <div className="container">
@@ -206,6 +210,23 @@ const App = () => {
             grid={grid}
             setGrid={setGrid}
           />
+        </div>
+      </div>
+      <div className="footer">
+        <div className="footer-tag">
+          <h1>Project build by Prateek</h1>
+          <h1>
+            For more information regarding Conways-Game-Of-Life Click below
+          </h1>
+          <a
+            className="links"
+            href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+          >
+            Link
+          </a>
+        </div>
+        <div className="linkedin-icon">
+          <i className="fa fa-linkedin-square" onClick={() => goToLinkedin()} />
         </div>
       </div>
     </>
