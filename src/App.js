@@ -34,11 +34,17 @@ const App = () => {
     return rows;
   });
 
+  const [patternSelectedFromModal, setPatternSelectedFromModal] = useState(
+    () => "gosper"
+  );
+  useEffect(() => {}, [reRender, patternSelectedFromModal]);
+
   const [modalInfo, setModalInfo] = useState(() => {
     return start_info;
   });
-
+  console.log("HH" + patternSelectedFromModal);
   const [delayTime, setDelayTime] = useState(() => {
+    Patterns({ grid, setGrid, setreRender, patternSelectedFromModal });
     return 100;
   });
 
@@ -55,8 +61,7 @@ const App = () => {
       });
     }
   }
-
-  useEffect(() => {}, [reRender]);
+  //console.log(patternSelectedFromModal);
 
   function handleClick() {
     if (buttonText === "Start") setButtonText("Stop");
@@ -87,23 +92,18 @@ const App = () => {
     setModalInfo(start_info);
     setIsOpen(true);
   }
+
   const [isModalForPatterSelectionOpen, setOpenModalForPatternSelection] =
     useState(() => false);
 
-  const [patternSelectedFromModal, setPatternSelectedFromModal] = useState(
-    () => ""
-  );
   function selectPattern() {
     setOpenModalForPatternSelection(true);
-    //debugger;
-
-    //debugger;
   }
-  //console.log('Re-rendering')
+
   function goToLinkedin() {
-    console.log("clicked");
     window.open("https://www.linkedin.com/in/prateek-sharma-891721196/");
   }
+
   return (
     <>
       <div className="container">
