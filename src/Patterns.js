@@ -207,6 +207,7 @@ export default function Patterns({
   setreRender,
   patternSelectedFromModal,
 }) {
+  
   if (patternSelectedFromModal === "") return;
   for (const [key1, val1] of Object.entries(PATTERN_GRIDS)) {
     if (key1 !== patternSelectedFromModal) continue;
