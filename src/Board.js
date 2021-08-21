@@ -12,24 +12,12 @@ export default function Board(props) {
   setGrid = props.setGrid;
   buttonText = props.buttonText;
   if (isSimulation2DoneExecuting && buttonText === "Stop") {
-    //console.log('if')
     isSimulation2DoneExecuting = false;
     simulate2(props.delayTime);
   }
   return <></>;
 }
-/*
-async function tutor()
-{
-   console.log('Hello')
-   for(let i=0; i<=10; i++)
-     {
-         //await sleep(2000)
-         //console.log(`i=${i}`)
-     }
-     //isTutorDoneExecuting=true
-}
-*/
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -50,9 +38,6 @@ async function simulate2(delayTime) {
       let alives = neighbours_Alive_Dead(grid, i, j);
 
       if (alives > 0) {
-        //console.log(`(i,j)=(${i},${j}) alives=${alives}`)
-        //console.log(grid)
-        //console.log(newGrid)
       }
       if (alives > 0) flag = true;
 
@@ -82,5 +67,3 @@ function neighbours_Alive_Dead(arr, i, j) {
   if (arr[i + 1][j + 1] === 1) alives++;
   return alives;
 }
-
-//changes
